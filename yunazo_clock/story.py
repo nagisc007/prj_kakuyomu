@@ -76,15 +76,21 @@ def ep_intro(inn, vila, oneday, yusha, panna, oclock):
             vila.desc("ここが山間の寂れた村だということ"),
             yusha.think("それを忘れてしまうような安眠だった"),
             panna.tell("なあなあ、{}。まだ眠るん？　結局朝ご飯食べ損ねたやん".format(yusha.name)),
+            panna.desc("小柄で肩までの金髪が跳ね返っている"),
+            yusha.desc("右の前髪がつんと天井を向いている"),
             yusha.act("目覚める"),
+            yusha.tell("本当に一日ずっと起きて見張っていたのか？"),
+            panna.tell("昨日からずっと夜通し起きてたよ。なんで勇者はさっさと寝ちゃったの。せっかく二人きりになれたのにさ"),
             yusha.tell("それで{}はアレが鳴くのを聞けたのか？".format(panna.name)),
             panna.tell("ううん"),
+            yusha.tell("本当に一度も鳴かなかったのか？"),
+            panna.tell("うん"),
             yusha.think("アレとは棚の上に飾られた{}のことだ".format(oclock.name)),
             yusha.tell("宿の主と約束したからな。何故{}が鳴かなくなってしまったのか。その謎を解けば家賃を半額にしてくれると".format(oclock.name)),
             )
 
 
-def ep_mystery(inn, oneday, yusha, panna):
+def ep_mystery(inn, oneday, yusha, panna, owner, oclock):
     '''Mystery story.
     '''
     return (
@@ -95,6 +101,11 @@ def ep_mystery(inn, oneday, yusha, panna):
             inn.desc("床も天井も随分と古くなっている"),
             yusha.tell("謎なんか最初からなかったのさ"),
             panna.tell("どゆこと？"),
+            yusha.tell("家賃を半額にしてもらわないと、手持ちのお金が足りないんだよ"),
+            owner.act("部屋に入ってくる"),
+            yusha.tell("すみません。少し聞かせてもらえませんか。"),
+            oneday.desc("その時だった"),
+            oclock.desc("別の部屋で{}が鳴いた".format(oclock.name)),
             )
 
 
@@ -107,6 +118,7 @@ def ep_resolve(inn, oneday, yusha, panna, owner, oclock):
             Done(yusha, "再び眠りに就いた"),
             oneday.desc("まだ夕方にはなっていない"),
             inn.desc("部屋の中には空気がわだかまっていた"),
+            yusha.tell("謎は既に解けていたんだよ"),
             panna.tell("それで何が分かったの？"),
             yusha.tell("結局何も起こっていない、ということさ"),
             yusha.tell("丸一日観察してみたが、一度として鳴かなかった"),
@@ -114,9 +126,10 @@ def ep_resolve(inn, oneday, yusha, panna, owner, oclock):
             owner.tell("じゃあどうして鳴かないんで？"),
             yusha.tell("簡単なことだ。壊れているんだよ"),
             yusha.tell("あなたが貰ってきた時にはまだ正常に動いていたが、ここを見てくれ"),
-            yusha.act("{}の下を見せた".format(oclock.name)),
+            yusha.act("{}の下を分解して見せた".format(oclock.name)),
             owner.tell("それが？"),
             yusha.tell("ここに微弱な魔法力を出す魔石がある。おそらくはそれに寿命がきたんだ。これを新しいものと取り替えれば、動き出す可能性もある"),
+            oclock.desc("村で一斉に鳩時計が鳴き出した"),
             )
 
 # main story
@@ -143,7 +156,7 @@ def story():
     # episodes
     episodes = \
             ep_intro(inn, vila, oneday, yusha, panna, oclock) +\
-            ep_mystery(inn, oneday, yusha, panna) +\
+            ep_mystery(inn, oneday, yusha, panna, owner, oclock) +\
             ep_resolve(inn, oneday, yusha, panna, owner, oclock)
 
     return episodes

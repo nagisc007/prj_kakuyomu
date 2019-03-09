@@ -56,20 +56,20 @@ class StoryTest(unittest.TestCase):
         else:
             raise AssertionError("Stage was a mismatch!")
 
-    def test_story_in_the_reason(self):
+    def test_story_outline_reason(self):
         for a in self.acts:
             if "家賃" in a.action:
                 break
         else:
             raise AssertionError("Reason was a mismatch!")
 
-    def test_story_has_howto(self):
+    def test_story_outline_process(self):
         for a in self.acts:
             if "丸一日" in a.action: break
         else:
-            raise AssertionError("Howto was a mismatch!")
+            raise AssertionError("Process was a mismatch!")
 
-    def test_story_has_the_result(self):
+    def test_story_outline_result(self):
         for a in self.acts:
             if "鳩時計" in a.action:
                 break
@@ -80,13 +80,24 @@ class StoryTest(unittest.TestCase):
 class EpisodeTest_intro(unittest.TestCase):
     """Test episode of intro.
 
-    * フクロウ時計
-        - 主人公（勇者）はいるか
-        - パンナはいるか
-        - 同じ部屋に二人きりか
-        - フクロウ時計はあるか
-        - フクロウ時計は鳴っていないか
-        - 二人は遅刻しているか
+    * Outline
+        - Who: 勇者
+        - Whom: パンナ
+        - When: 昼前
+        - Where: 宿の個室（一人部屋に二人）
+        - What: フクロウ時計が鳴かなくなった謎を解く
+        - Why: 家賃を半額にする為
+        - How: 一日観察する
+        - Result: フクロウ時計は鳴かなかった
+    * Advanced
+        - 勇者とは何か？
+        - 勇者の外見描写
+        - パンナの外見描写
+        - パーティの簡易紹介
+        - 宿の部屋の描写
+        - 季節の描写
+        - 村の簡易説明
+        - クロク村は時計職人の村である
     """
 
     def setUp(self):
@@ -100,31 +111,59 @@ class EpisodeTest_intro(unittest.TestCase):
     def test_intro_has_basic_infos(self):
         self.assertTrue(checked_has_basic_info(self.acts, Yusha(), Panna()))
 
-    def test_intro_has_chara_descs(self):
-        '''人物描写
-        '''
-        pass
+    def test_intro_outline_reason(self):
+        for a in self.acts:
+            if "家賃" in a.action and "半額" in a.action: break
+        else:
+            raise AssertionError("Reason was a mismatch!")
+
+    def test_intro_outline_process(self):
+        for a in self.acts:
+            if "一日" in a.action and "見張" in a.action: break
+        else:
+            raise AssertionError("Process was a mismatch!")
+
+    def test_intro_outline_result(self):
+        for a in self.acts:
+            if "鳴かなかった" in a.action: break
+        else:
+            raise AssertionError("Result was a mismatch!")
+
+    def test_intro_has_yusha_desc(self):
+        for a in self.acts:
+            if isinstance(a.subject, Yusha) and a.act_type is ActType.DESC: break
+        else:
+            raise AssertionError("Yusha's description not exists!")
+
+    def test_intro_has_panna_desc(self):
+        for a in self.acts:
+            if isinstance(a.subject, Panna) and a.act_type is ActType.DESC: break
+        else:
+            raise AssertionError("Panna's description not exists!")
 
     def test_intro_has_stage_descs(self):
-        '''場面描写
-        '''
         pass
 
     def test_intro_has_daytime_descs(self):
-        '''時節描写
-        '''
         pass
 
 class EpisodeTest_mystery(unittest.TestCase):
     """Test episode of mystery
 
-    * フクロウ時計の謎
-        - なぜ他の二人は起こしにこないのか
+    * Outline
+        - Who: 勇者
+        - Whom: パンナ
+        - When: 継続
+        - Where: 継続
+        - What: フクロウ時計が鳴かなくなった理由を解明する
+        - Why: 家賃を半額にしたい（金があまりない）
+        - How: 店主に事情聴取する
+        - Result: 別の部屋のフクロウ時計が鳴いた
     """
 
     def setUp(self):
         self.acts = ep_mystery(
-                Inn(), OneDay(), Yusha(), Panna(),
+                Inn(), OneDay(), Yusha(), Panna(), InnOwner(), OwlClock(),
                 )
 
     def test_mystery_all_actions(self):
@@ -133,13 +172,40 @@ class EpisodeTest_mystery(unittest.TestCase):
     def test_mystery_has_basic_infos(self):
         self.assertTrue(checked_has_basic_info(self.acts, Yusha(), Panna()))
 
+    def test_mystery_outline_reason(self):
+        for a in self.acts:
+            if "家賃" in a.action and "半額" in a.action: break
+        else:
+            raise AssertionError("Reason was a mismatch!")
+
+    def test_mystery_outline_process(self):
+        for a in self.acts:
+            if isinstance(a.subject, InnOwner): break
+        else:
+            raise AssertionError("Process was a mismatch (owner not exists)!")
+        for a in self.acts:
+            if isinstance(a.subject, Yusha) and "聞かせて" in a.action: break 
+        else:
+            raise AssertionError("Process was a mismatch!")
+
+    def test_mystery_outline_result(self):
+        for a in self.acts:
+            if isinstance(a.subject, OwlClock) and "別の部屋" in a.action: break
+        else:
+            raise AssertionError("Result was a mismatch!")
 
 class EpisodeTest_resolve(unittest.TestCase):
     """Test episode of resolve
 
-    * フクロウ時計はなかった
-        - フクロウ時計の正体への言及
-        - 二人が起こしにこないことの説明
+    * Outline
+        - Who: 勇者
+        - Whom: 店主
+        - When: 昼前から昼
+        - Where: 宿の中、村
+        - What: 店主にフクロウ時計が鳴かない理由を説明する
+        - Why: 謎が解けたので
+        - How: フクロウ時計を分解して見せる
+        - Result: 村で一斉に鳩時計が鳴いた
     """
 
     def setUp(self):
@@ -152,4 +218,22 @@ class EpisodeTest_resolve(unittest.TestCase):
 
     def test_resolve_has_basic_infos(self):
         self.assertTrue(checked_has_basic_info(self.acts, Yusha(), Panna()))
+
+    def test_resolve_outline_reason(self):
+        for a in self.acts:
+            if "謎" in a.action and "解" in a.action: break
+        else:
+            raise AssertionError("Reason was a mismatch!")
+
+    def test_resolve_outline_process(self):
+        for a in self.acts:
+            if "分解" in a.action: break
+        else:
+            raise AssertionError("Process was a mismatch!")
+
+    def tset_resolve_outline_result(self):
+        for a in self.acts:
+            if "一斉" in a.action and "鳴" in a.action: break
+        else:
+            raise AssertionError("Result was a mismatch!")
 
