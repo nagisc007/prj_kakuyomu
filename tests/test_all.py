@@ -17,6 +17,7 @@ def suite():
     # add each tests
     suite.addTest(unittest.makeSuite(test_yunazo_clock.StoryTest))
     suite.addTest(unittest.makeSuite(test_yunazo_clock.EpisodeTest_intro))
+    suite.addTest(unittest.makeSuite(test_yunazo_clock.EpisodeTest_mystery))
     suite.addTest(unittest.makeSuite(test_yunazo_clock.EpisodeTest_resolve))
 
     return suite
