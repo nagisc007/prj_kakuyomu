@@ -64,6 +64,7 @@ def ep_intro(inn, oneday, yusha, panna):
     return (
             Must(yusha, "冒険に出掛ける"),
             oneday.desc("既に昼を過ぎていた"),
+            inn.desc("一人部屋に二人が押し込められていた"),
             panna.tell("大変だよ！"),
             yusha.act("目覚める"),
             Done(yusha, "目覚めた"),
@@ -76,6 +77,10 @@ def ep_resolve(inn, oneday, yusha, panna):
     return (
             Must(yusha, "事件解決"),
             Done(yusha, "再び眠りに就いた"),
+            oneday.desc("まだ夕方にはなっていない"),
+            inn.desc("部屋の中には空気がわだかまっていた"),
+            panna.tell("それで何が分かったの？"),
+            yusha.tell("結局何も起こっていない、ということさ"),
             )
 
 # main story
