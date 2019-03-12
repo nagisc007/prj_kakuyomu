@@ -12,10 +12,10 @@ from yunazo.common import Yusha, Panna, InnOwner
 from yunazo.common import ClocVila, Inn
 from yunazo.common import OwlClock
 from yunazo.common import OneDay
-from yunazo.story1 import story
-from yunazo.story1 import ep_intro
-from yunazo.story1 import ep_mystery
-from yunazo.story1 import ep_resolve
+from yunazo.story1.story import story
+from yunazo.story1.story import ep_intro
+from yunazo.story1.story import ep_mystery
+from yunazo.story1.story import ep_resolve
 
 
 class StoryTest(unittest.TestCase):
