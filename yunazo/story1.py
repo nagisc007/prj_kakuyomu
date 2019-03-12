@@ -8,58 +8,15 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append('storybuilder')
 
 # import libs
-from storybuilder.builder.base import ActType, Act, Must, Done, Title, Description
-from storybuilder.builder.base import Person, Stage, Item, DayTime
+from storybuilder.builder.acttypes import Behavior
+from storybuilder.builder.base import Title 
 from storybuilder.builder.tools import output, output_md
 
-
-# define characters
-class Yusha(Person):
-    def __init__(self):
-        super().__init__("勇者", 18, "male", "勇者")
-
-
-class Panna(Person):
-    def __init__(self):
-        super().__init__("パンナ", 16, "female", "武闘家")
-
-
-class Crades(Person):
-    def __init__(self):
-        super().__init__("クラデス", 76, "male", "僧侶")
-
-
-class Emile(Person):
-    def __init__(self):
-        super().__init__("エミール", 20, "female", "魔法剣士")
-
-
-class InnOwner(Person):
-    def __init__(self):
-        super().__init__("宿の店主", 45, "male", "宿の店主")
-
-
-# define stages
-class ClocVila(Stage):
-    def __init__(self):
-        super().__init__("クロク村", "山間にある寒村")
-
-
-class Inn(Stage):
-    def __init__(self):
-        super().__init__("村の宿", "村唯一の宿。しょぼい")
-
-
-# define items
-class OwlClock(Item):
-    def __init__(self):
-        super().__init__("フクロウ時計", "フクロウの姿をした時計")
-
-
-# define daytimes
-class OneDay(DayTime):
-    def __init__(self):
-        super().__init__("ある日", mon=3, hour=10)
+# import data
+from common import Yusha, Panna, InnOwner
+from common import ClocVila, Inn
+from common import OwlClock
+from common import OneDay
 
 
 # episodes
@@ -68,25 +25,25 @@ def ep_intro(inn, vila, oneday, yusha, panna, oclock):
     '''
     return (
             Title("フクロウ時計"),
-            Must(yusha, "持ち金が少ない"),
-            Done(yusha, "家賃を安くする交渉"),
-            oneday.desc("既にすっかり日が昇ってしまっていた"),
-            inn.desc("村唯一の宿で、しかも部屋が埋まっているという"),
-            inn.desc("そこで仕方なく、一人部屋に二人押し込められたという訳だ"),
-            vila.desc("ここが山間の寂れた村だということ"),
+            oneday.look("既にすっかり日が昇ってしまっていた"),
+            inn.look("村唯一の宿で、しかも部屋が埋まっているという"),
+            inn.look("そこで仕方なく、一人部屋に二人押し込められたという訳だ"),
+            vila.look("ここが山間の寂れた村だということ"),
+            yusha.want("家賃を安くすませる"),
             yusha.think("それを忘れてしまうような安眠だった"),
             panna.tell("なあなあ、{}。まだ眠るん？　結局朝ご飯食べ損ねたやん".format(yusha.name)),
-            panna.desc("小柄で肩までの金髪が跳ね返っている"),
-            yusha.desc("右の前髪がつんと天井を向いている"),
-            yusha.act("目覚める"),
-            yusha.tell("本当に一日ずっと起きて見張っていたのか？"),
-            panna.tell("昨日からずっと夜通し起きてたよ。なんで勇者はさっさと寝ちゃったの。せっかく二人きりになれたのにさ"),
+            panna.look("小柄で肩までの金髪が跳ね返っている"),
+            yusha.look("右の前髪がつんと天井を向いている"),
+            yusha.act("目覚める", Behavior.WAKE),
+            yusha.look("本当に一日ずっと起きて見張っていたのか？"),
+            panna.look("昨日からずっと夜通し起きてたよ。なんで勇者はさっさと寝ちゃったの。せっかく二人きりになれたのにさ"),
             yusha.tell("それで{}はアレが鳴くのを聞けたのか？".format(panna.name)),
             panna.tell("ううん"),
             yusha.tell("本当に一度も鳴かなかったのか？"),
             panna.tell("うん"),
             yusha.think("アレとは棚の上に飾られた{}のことだ".format(oclock.name)),
             yusha.tell("宿の主と約束したからな。何故{}が鳴かなくなってしまったのか。その謎を解けば家賃を半額にしてくれると".format(oclock.name)),
+            yusha.result("{}に店主を呼ぶよう頼む".format(panna.name)),
             )
 
 
@@ -95,17 +52,18 @@ def ep_mystery(inn, oneday, yusha, panna, owner, oclock):
     '''
     return (
             Title("鳴かないフクロウ"),
-            Must(yusha, "フクロウ時計の謎を解く"),
-            Done(yusha, "{}に謎はないと言った".format(panna.name)),
-            oneday.desc("ぼんやりとした日差しが差し込んでいた"),
-            inn.desc("床も天井も随分と古くなっている"),
+            oneday.look("ぼんやりとした日差しが差し込んでいた"),
+            inn.look("床も天井も随分と古くなっている"),
+            yusha.must("フクロウ時計の謎を解く"),
+            yusha.think("家賃を安くしたい"),
             yusha.tell("謎なんか最初からなかったのさ"),
             panna.tell("どゆこと？"),
             yusha.tell("家賃を半額にしてもらわないと、手持ちのお金が足りないんだよ"),
-            owner.act("部屋に入ってくる"),
+            owner.act("部屋に入ってくる", Behavior.COME),
             yusha.tell("すみません。少し聞かせてもらえませんか。"),
-            oneday.desc("その時だった"),
-            oclock.desc("別の部屋で{}が鳴いた".format(oclock.name)),
+            oneday.look("その時だった"),
+            oclock.look("別の部屋で{}が鳴いた".format(oclock.name)),
+            yusha.result("店主に解いた謎を披露する"),
             )
 
 
@@ -114,10 +72,10 @@ def ep_resolve(inn, oneday, yusha, panna, owner, oclock):
     '''
     return (
             Title("そして鳥は動き出す"),
-            Must(yusha, "事件解決"),
-            Done(yusha, "再び眠りに就いた"),
-            oneday.desc("まだ夕方にはなっていない"),
-            inn.desc("部屋の中には空気がわだかまっていた"),
+            oneday.look("まだ夕方にはなっていない"),
+            inn.look("部屋の中には空気がわだかまっていた"),
+            yusha.want("家賃を半額にする"),
+            yusha.think("謎が解けた"),
             yusha.tell("謎は既に解けていたんだよ"),
             panna.tell("それで何が分かったの？"),
             yusha.tell("結局何も起こっていない、ということさ"),
@@ -129,7 +87,8 @@ def ep_resolve(inn, oneday, yusha, panna, owner, oclock):
             yusha.act("{}の下を分解して見せた".format(oclock.name)),
             owner.tell("それが？"),
             yusha.tell("ここに微弱な魔法力を出す魔石がある。おそらくはそれに寿命がきたんだ。これを新しいものと取り替えれば、動き出す可能性もある"),
-            oclock.desc("村で一斉に鳩時計が鳴き出した"),
+            oclock.look("村で一斉に鳩時計が鳴き出した"),
+            yusha.result("謎を解いた"),
             )
 
 # main story
@@ -142,8 +101,6 @@ def story():
     # characters
     yusha = Yusha()
     panna = Panna()
-    crades = Crades()
-    emile = Emile()
     owner = InnOwner()
     # stages
     vila = ClocVila()

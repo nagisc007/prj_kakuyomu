@@ -3,20 +3,19 @@
 """
 import unittest
 
-from storybuilder.builder.base import ActType, Act, Must, Done, Title, Description
-from storybuilder.builder.base import Person, Stage, Item, DayTime
-
-from yunazo_clock.story import Yusha, Panna, Crades, Emile, InnOwner
-from yunazo_clock.story import ClocVila, Inn
-from yunazo_clock.story import OwlClock
-from yunazo_clock.story import OneDay
-from yunazo_clock.story import story
-from yunazo_clock.story import ep_intro
-from yunazo_clock.story import ep_mystery
-from yunazo_clock.story import ep_resolve
-
+from storybuilder.builder.acttypes import ActType
+from storybuilder.builder.base import Stage, DayTime
 from storybuilder.builder.testtools import checked_if_all_actions
 from storybuilder.builder.testtools import checked_has_basic_info
+
+from yunazo.common import Yusha, Panna, InnOwner
+from yunazo.common import ClocVila, Inn
+from yunazo.common import OwlClock
+from yunazo.common import OneDay
+from yunazo.story1 import story
+from yunazo.story1 import ep_intro
+from yunazo.story1 import ep_mystery
+from yunazo.story1 import ep_resolve
 
 
 class StoryTest(unittest.TestCase):
@@ -40,7 +39,11 @@ class StoryTest(unittest.TestCase):
         self.assertTrue(checked_if_all_actions(self.acts))
 
     def test_story_has_basic_infos(self):
-        self.assertTrue(checked_has_basic_info(self.acts, Yusha(), Panna()))
+        self.assertTrue(
+                checked_has_basic_info(self,
+                    self.acts, Yusha(), Panna(),
+                    "家賃", "丸一日")
+                )
 
     def test_story_in_the_time(self):
         for a in self.acts:
@@ -109,7 +112,11 @@ class EpisodeTest_intro(unittest.TestCase):
         self.assertTrue(checked_if_all_actions(self.acts))
 
     def test_intro_has_basic_infos(self):
-        self.assertTrue(checked_has_basic_info(self.acts, Yusha(), Panna()))
+        self.assertTrue(
+                checked_has_basic_info(self,
+                    self.acts, Yusha(), Panna(),
+                    "家賃", "半額")
+                )
 
     def test_intro_outline_reason(self):
         for a in self.acts:
@@ -170,7 +177,11 @@ class EpisodeTest_mystery(unittest.TestCase):
         self.assertTrue(checked_if_all_actions(self.acts))
 
     def test_mystery_has_basic_infos(self):
-        self.assertTrue(checked_has_basic_info(self.acts, Yusha(), Panna()))
+        self.assertTrue(
+                checked_has_basic_info(self,
+                    self.acts, Yusha(), Panna(),
+                    "家賃", "謎")
+                )
 
     def test_mystery_outline_reason(self):
         for a in self.acts:
@@ -217,7 +228,11 @@ class EpisodeTest_resolve(unittest.TestCase):
         self.assertTrue(checked_if_all_actions(self.acts))
 
     def test_resolve_has_basic_infos(self):
-        self.assertTrue(checked_has_basic_info(self.acts, Yusha(), Panna()))
+        self.assertTrue(
+                checked_has_basic_info(self,
+                    self.acts, Yusha(), Panna(),
+                    "解", "分解")
+                )
 
     def test_resolve_outline_reason(self):
         for a in self.acts:
