@@ -5,6 +5,7 @@ import unittest
 
 # import yunazo test
 import test_yunazo_clock
+import test_yunazo_2nd
 
 def suite():
     '''Packing all tests.
@@ -14,10 +15,16 @@ def suite():
     '''
     suite = unittest.TestSuite()
 
-    # add each tests
+    # story1
     suite.addTest(unittest.makeSuite(test_yunazo_clock.StoryTest))
     suite.addTest(unittest.makeSuite(test_yunazo_clock.EpisodeTest_intro))
     suite.addTest(unittest.makeSuite(test_yunazo_clock.EpisodeTest_mystery))
     suite.addTest(unittest.makeSuite(test_yunazo_clock.EpisodeTest_resolve))
+
+    # story2
+    suite.addTest(unittest.makeSuite(test_yunazo_2nd.StoryTest))
+    suite.addTest(unittest.makeSuite(test_yunazo_2nd.EpisodeTest_intro))
+    suite.addTest(unittest.makeSuite(test_yunazo_2nd.EpisodeTest_incave))
+    suite.addTest(unittest.makeSuite(test_yunazo_2nd.EpisodeTest_treasure))
 
     return suite
