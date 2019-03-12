@@ -54,6 +54,16 @@ class TH_Tanaka(Person):
         super().__init__("アンラッキィ田中", 35, "male", "トレジャーハンター", "何かと不幸な星の下に生まれた男")
 
 
+class DondahlChief(Person):
+    def __init__(self):
+        super().__init__("ドンダール村長", 67, "male", "村長", "前髪の薄い中肉の男性")
+
+
+class Brenda(Person):
+    def __init__(self):
+        super().__init__("ブレンダ", 56, "female", "使用人", "バダック付の使用人")
+
+
 # define stages
 ## story1
 class ClocVila(Stage):
@@ -109,6 +119,16 @@ class BadacCaveDoor(Item):
         super().__init__("洞窟の扉", "バダックの洞窟内に唯一ある扉")
 
 
+class BadacShelf(Item):
+    def __init__(self):
+        super().__init__("バダックの棚", "隠し部屋にあった引き出し付の棚")
+
+
+class BadacMemo(Item):
+    def __init__(self):
+        super().__init__("バダックの手紙", "使用人に宛てた買い物メモ")
+
+
 # define daytimes
 ## story1
 class OneDay(DayTime):
@@ -123,5 +143,5 @@ class AfterDay(DayTime):
 ## story2
 class TreasureDay(DayTime):
     def __init__(self):
-        super().__init__("宝物日和", mon=5, day=5, hour=10)
+        super().__init__("宝物日和", mon=5, day=5, hour=10, explain="バロックの命日の数日前")
 
