@@ -6,6 +6,8 @@ import os
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '../..'))
 sys.path.append('storybuilder')
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append('common')
 
 # import libs
 from storybuilder.builder.acttypes import Behavior
@@ -24,6 +26,7 @@ def ep_intro(cave, tday, yusha, panna, emile, tanaka, chief, bmap, bdoor):
     '''Intro story.
     '''
     return (
+            Title("最初の洞窟"),
             cave.look("ごく普通の洞窟内"),
             tday.look("外は午前だが、ここは薄暗い"),
             yusha.act("宝の地図の謎解き", Behavior.REQUEST),
@@ -62,6 +65,7 @@ def ep_incave(cave, tday, yusha, panna, emile, bmap):
     '''In cave story.
     '''
     return (
+            Title("一番目の扉"),
             cave.look("他には出入り口がない"),
             tday.look("大した時間が経っていない"),
             yusha.tell("結局他に入り口はなかった"),
@@ -92,6 +96,7 @@ def ep_treasure(secroom, tday, yusha, panna, emile, badac, brenda, bmap, bpics, 
     '''His treasure.
     '''
     return (
+            Title("二番目の女性"),
             secroom.look("そこは隠し部屋"),
             tday.look("まだ昼にはなっていない"),
             bpics.look("絵が沢山散らばっている"),
