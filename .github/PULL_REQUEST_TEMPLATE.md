@@ -8,7 +8,6 @@ Japanese title
 A your pr description.
 
 **ToDo**
-todo checklist
 - [ ] taskA
 - [ ] taskB
 - [ ] taskC

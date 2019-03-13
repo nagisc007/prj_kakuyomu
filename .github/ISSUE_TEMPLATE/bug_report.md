@@ -26,5 +26,10 @@ A clear and concise description of what you expected to happen.
 **Current behavior**
 actual behavior.
 
+**Tasks**
+- [ ] taskA
+- [ ] taskB
+- [ ] taskC
+
 **Note**
 additional comment.

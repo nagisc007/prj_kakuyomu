@@ -22,5 +22,10 @@ A your thought description.
 **Details**
 the thought details.
 
+**Tasks**
+- [ ] taskA
+- [ ] taskB
+- [ ] taskC
+
 **Note**
 additional comment.

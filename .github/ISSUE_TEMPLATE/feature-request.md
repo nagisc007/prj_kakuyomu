@@ -19,5 +19,10 @@ your thought of the feature.
 **Current behavior**
 actual behavior of the feature.
 
+**Tasks**
+- [ ] taskA
+- [ ] taskB
+- [ ] taskC
+
 **Note**
 additional comment.
