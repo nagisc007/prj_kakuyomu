@@ -21,6 +21,11 @@ from yunazo.story2.story import ep_treasure
 class StoryTest(unittest.TestCase):
     """Test story.
     """
+
+    @classmethod
+    def setUpClass(cls):
+        print("**** story of yunazo2 ****")
+
     def setUp(self):
         self.acts = story()
 

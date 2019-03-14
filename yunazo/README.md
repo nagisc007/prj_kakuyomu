@@ -2,7 +2,7 @@
 
 | version | genre |
 | --- | --- |
-| v0.1.1 | Fantasy, Mystery |
+| v0.2.0 | Fantasy, Mystery |
 
 **「冒険など、私がしなくても誰かがするでしょう」**
 
@@ -11,7 +11,8 @@
 | Number | Title | Site |
 | --- | --- | --- |
 | [#1](story1/README.md) | 勇者は冒険よりフクロウ時計の謎解きをしたい | [カクヨム](https://kakuyomu.jp/works/1177354054888763621) |
-| [#2](story2/README.md) | 勇者は冒険より二番目の扉の謎解きをしたい | [カクヨム](https://kakuyomu.jp/users/nagi_nt/works) |
+| [#2](story2/README.md) | 勇者は冒険より天才発明家バダックの洞窟の謎解きをしたい | [カクヨム](https://kakuyomu.jp/works/1177354054888805759) |
+| [#3](story3/README.md) | 勇者は冒険より白馬王子の森の謎解きをしたい | [カクヨム](https://kakuyomu.jp/users/nagi_nt/works) |
 
 ## Description
 
@@ -27,6 +28,8 @@
 ## Stages
 
 - クロク村……時計職人の村。
+- ドンダール……天才発明家バダックの故郷の町。
+- トンハイ……東方文化が根付く海辺の町。パンナの故郷。
 
 ## License
 

@@ -6,6 +6,7 @@ import unittest
 # import yunazo test
 import test_yunazo_clock
 import test_yunazo_2nd
+import test_yunazo_forest
 
 def suite():
     '''Packing all tests.
@@ -26,5 +27,9 @@ def suite():
     suite.addTest(unittest.makeSuite(test_yunazo_2nd.EpisodeTest_intro))
     suite.addTest(unittest.makeSuite(test_yunazo_2nd.EpisodeTest_incave))
     suite.addTest(unittest.makeSuite(test_yunazo_2nd.EpisodeTest_treasure))
+
+    # story3
+    suite.addTest(unittest.makeSuite(test_yunazo_forest.StoryTest))
+    suite.addTest(unittest.makeSuite(test_yunazo_forest.EpisodeTest_intro))
 
     return suite

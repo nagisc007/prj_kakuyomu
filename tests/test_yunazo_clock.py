@@ -32,6 +32,10 @@ class StoryTest(unittest.TestCase):
         - Result: フクロウ時計ではなく壊れた不細工な鳩時計だった
     """
 
+    @classmethod
+    def setUpClass(cls):
+        print("**** story of yunazo1 ****")
+
     def setUp(self):
         self.acts = story()
 
