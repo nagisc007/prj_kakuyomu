@@ -64,6 +64,11 @@ class Brenda(Person):
     def __init__(self):
         super().__init__("ブレンダ", 56, "female", "使用人", info="バダック付の使用人")
 
+## story3
+class Manderine(Person):
+    def __init__(self):
+        super().__init__("マンデリン", 66, "male", "執事", "私", "ワローン家に代々使える執事の家系")
+
 
 # define stages
 ## story1
@@ -95,6 +100,16 @@ class BadacCave(Stage):
 class BadacSecretRoom(Stage):
     def __init__(self):
         super().__init__("バダックの隠し部屋", "バダックが財宝を隠した部屋")
+
+## story3
+class WaroneHouse(Stage):
+    def __init__(self):
+        super().__init__("ワローン邸", "ワローン家の豪邸")
+
+
+class SilverForest(Stage):
+    def __init__(self):
+        super().__init__("白銀の森", "白銀の馬に乗った王子に出会える伝説がある")
 
 
 # define items
@@ -129,20 +144,30 @@ class BadacMemo(Item):
     def __init__(self):
         super().__init__("バダックの手紙", "使用人に宛てた買い物メモ")
 
+## story3
+class RentalPony(Item):
+    def __init__(self):
+        super().__init__("ポニィ", "トンハイの街で勇者が借りたポニィ")
+
 
 # define daytimes
 ## story1
 class OneDay(DayTime):
     def __init__(self):
-        super().__init__("ある日", mon=3, day=5, hour=11)
+        super().__init__("ある日", mon=3, day=5, year=1019, hour=11)
 
 
 class AfterDay(DayTime):
     def __init__(self):
-        super().__init__("後日", mon=3, day=15, hour=15)
+        super().__init__("後日", mon=3, day=15, year=1019, hour=15)
 
 ## story2
 class TreasureDay(DayTime):
     def __init__(self):
-        super().__init__("宝物日和", mon=5, day=5, hour=10, info="バロックの命日の数日前")
+        super().__init__("宝物日和", mon=5, day=5, year=1019, hour=10, info="バロックの命日の数日前")
+
+## story3
+class MeetDay(DayTime):
+    def __init__(self):
+        super().__init__("パンナと出会った日", mon=9, day=20, year=1017, info="勇者とパンナが出会った日。二年前")
 
