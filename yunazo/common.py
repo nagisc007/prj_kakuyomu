@@ -8,60 +8,61 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append('storybuilder')
 
 # import libs
-from storybuilder.builder.base import Person, Stage, Item, DayTime
+from storybuilder.builder.base import Stage, Item, DayTime
+from storybuilder.builder.person import Person
 
 
 # define characters
 ## main
 class Yusha(Person):
     def __init__(self):
-        super().__init__("勇者", 18, "male", "勇者", "謎解き好きな勇者")
+        super().__init__("勇者", 18, "male", "勇者", "僕", "謎解き好きな勇者")
 
 
 class Panna(Person):
     def __init__(self):
-        super().__init__("パンナ", 16, "female", "武闘家", "能天気な少女")
+        super().__init__("パンナ", 16, "female", "武闘家", "ウチ", "能天気な少女")
 
 
 class Crades(Person):
     def __init__(self):
-        super().__init__("クラデス", 76, "male", "僧侶", "自称かつて大神官候補の助平爺")
+        super().__init__("クラデス", 76, "male", "僧侶", "わし", "自称かつて大神官候補の助平爺")
 
 
 class Emile(Person):
     def __init__(self):
-        super().__init__("エミール", 20, "female", "魔法剣士", "謎多き仮面の女性")
+        super().__init__("エミール", 20, "female", "魔法剣士", "私", "謎多き仮面の女性")
 
 ## story1
 class InnOwner(Person):
     def __init__(self):
-        super().__init__("宿の店主", 45, "male", "宿の店主", "宿の主。気苦労から窶れている")
+        super().__init__("宿の店主", 45, "male", "宿の店主", "わたし", "宿の主。気苦労から窶れている")
 
 
 class Klone(Person):
     def __init__(self):
-        super().__init__("クローネ", 78, "male", "時計技師", "村随一の時計職人")
+        super().__init__("クローネ", 78, "male", "時計技師", "儂", "村随一の時計職人")
 
 
 ## story2
 class Badac(Person):
     def __init__(self):
-        super().__init__("バダック", 80, "male", "発明家", "稀代の天才発明家")
+        super().__init__("バダック", 80, "male", "発明家", "私", "稀代の天才発明家")
 
 
 class TH_Tanaka(Person):
     def __init__(self):
-        super().__init__("アンラッキィ田中", 35, "male", "トレジャーハンター", "何かと不幸な星の下に生まれた男")
+        super().__init__("アンラッキィ田中", 35, "male", "トレジャーハンター", "オレ", "何かと不幸な星の下に生まれた男")
 
 
 class DondahlChief(Person):
     def __init__(self):
-        super().__init__("ドンダール村長", 67, "male", "村長", "前髪の薄い中肉の男性")
+        super().__init__("ドンダール村長", 67, "male", "村長", "私", "前髪の薄い中肉の男性")
 
 
 class Brenda(Person):
     def __init__(self):
-        super().__init__("ブレンダ", 56, "female", "使用人", "バダック付の使用人")
+        super().__init__("ブレンダ", 56, "female", "使用人", info="バダック付の使用人")
 
 
 # define stages
@@ -143,5 +144,5 @@ class AfterDay(DayTime):
 ## story2
 class TreasureDay(DayTime):
     def __init__(self):
-        super().__init__("宝物日和", mon=5, day=5, hour=10, explain="バロックの命日の数日前")
+        super().__init__("宝物日和", mon=5, day=5, hour=10, info="バロックの命日の数日前")
 
