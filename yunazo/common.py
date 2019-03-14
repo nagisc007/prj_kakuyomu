@@ -150,6 +150,11 @@ class RentalPony(Item):
         super().__init__("ポニィ", "トンハイの街で勇者が借りたポニィ")
 
 
+class TabooBook(Item):
+    def __init__(self):
+        super().__init__("禁忌の本", "倉庫に所蔵されていた読んではならない本")
+
+
 # define daytimes
 ## story1
 class OneDay(DayTime):
