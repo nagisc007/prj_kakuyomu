@@ -98,9 +98,19 @@ def story():
             + ep_truth(forest, day, yusha, panna, pony, book)
 
 
-def main():
+def main(is_debug=True):
     '''main.
     '''
+    STORY_FILE = 'yunazo3'
+
+    mystory = story()
+
+    # output to the console
+    output(mystory, is_debug=is_debug)
+
+    # output to a markdown
+    output_md(mystory, STORY_FILE, is_debug=is_debug)
+
     return True
 
 
