@@ -32,6 +32,8 @@ class ScFrontLibrary(Scene):
                 lib.look("古い遺跡の入り口"),
                 yusha.think("調査依頼"),
                 panna.tell("かび臭そう"),
+                yusha.tell("遺跡調査を依頼されたんだ"),
+                yusha.go("中に入る"),
                 )
 
 class ScInLibrary(Scene):
@@ -48,6 +50,7 @@ class ScInLibrary(Scene):
                 day.look("今日中にやりたい"),
                 yusha.think("意外と頑丈そうだ"),
                 panna.go("どんどん奥に進む"),
+                yusha.see("本があった"),
                 )
 
 class ScOldBooks(Scene):
@@ -64,6 +67,9 @@ class ScOldBooks(Scene):
                 day.look("{}が暇そうにしている".format(panna.name)),
                 yusha.acquire("古い本"),
                 panna.ask("これ何の本"),
+                yusha.tell("調査するんだ"),
+                yusha.acquire("本を手に取る"),
+                yusha.see("踊る人形が描かれていた"),
                 )
 
 class ScDancingMen(Scene):
@@ -106,6 +112,10 @@ class ScDancingGirl(Scene):
         self.commit(
                 lib.look("ひっそりと佇む"),
                 day.look("外は夕暮れていた"),
+                yusha.think("踊る人形の謎について"),
+                yusha.think("あることに気づく"),
+                yusha.deal("{}を踊らせる".format(panna.name)),
+                yusha.tell("これは記録だったんだ"),
                 yusha.go("外に向かう"),
                 panna.go("{}を追いかける".format(yusha.name)),
                 )

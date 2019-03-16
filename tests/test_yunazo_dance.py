@@ -53,13 +53,14 @@ class StoryTest(unittest.TestCase):
 class EpisodeTest_intro(unittest.TestCase):
     """Test episode of intro.
     * outline
-        - Who:
-        - Whom:
-        - When:
-        - Where:
-        - Why:
-        - How:
-        - Resutl:
+        - Who: 勇者
+        - Whom: パンナ
+        - When: 秋
+        - Where: 遺跡
+        - What: 遺跡調査を行う
+        - Why: 遺跡調査を依頼された
+        - How: 実際に入ってみる
+        - Resutl: 中には本があった
     """
     def setUp(self):
         self.ep = EpIntro()
@@ -67,17 +68,23 @@ class EpisodeTest_intro(unittest.TestCase):
     def test_is_structed_scenes(self):
         self.assertTrue(is_episode_structed_scenes(self, self.ep))
 
+    def test_has_basic_infos(self):
+        self.assertTrue(
+            has_episode_outline_infos(self, self.ep,
+                "遺跡", "依頼", "入る", "本があった"))
+
 
 class EpisodeTest_dancingmen(unittest.TestCase):
     """Test episode of intro.
     * outline
-        - Who:
-        - Whom:
-        - When:
-        - Where:
-        - Why:
-        - How:
-        - Resutl:
+        - Who: 勇者
+        - Whom: パンナ
+        - When: 遺跡に入った後
+        - Where: 遺跡内部
+        - What: 本を調べる
+        - Why: 本が怪しい
+        - How: 実際に手に取る
+        - Resutl: 踊る人形文字が描かれていた
     """
     def setUp(self):
         self.ep = EpDancingMen()
@@ -85,23 +92,34 @@ class EpisodeTest_dancingmen(unittest.TestCase):
     def test_is_structed_scenes(self):
         self.assertTrue(is_episode_structed_scenes(self, self.ep))
 
+    def test_has_basic_infos(self):
+        self.assertTrue(
+            has_episode_outline_infos(self, self.ep,
+                "調査", "本", "手に取る", "踊る人形"))
+
 
 class EpisodeTest_papertruth(unittest.TestCase):
     """Test episode of intro.
     * outline
-        - Who:
-        - Whom:
-        - When:
-        - Where:
-        - Why:
-        - How:
-        - Resutl:
+        - Who: 勇者
+        - Whom: パンナ
+        - When: 本を調べてから少し経った
+        - Where: 遺跡内部
+        - What: 遺跡の謎を解く
+        - Why: 本の謎に気づいた
+        - How: パンナを踊らせる
+        - Resutl: 踊りを記録しようとした男の苦闘の後だった
     """
     def setUp(self):
         self.ep = EpPaperTruth()
 
     def test_is_structed_scenes(self):
         self.assertTrue(is_episode_structed_scenes(self, self.ep))
+
+    def test_has_basic_infos(self):
+        self.assertTrue(
+            has_episode_outline_infos(self, self.ep,
+                "謎", "気づく", "踊らせる", "記録"))
 
 
 class SceneTest_dancinggirl(unittest.TestCase):
