@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
 """Common data for yunazo series.
 """
-# import path
 import os
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append('storybuilder')
 
-# import libs
 from storybuilder.builder.base import Stage, Item, DayTime
 from storybuilder.builder.person import Person
 
@@ -111,6 +109,11 @@ class SilverForest(Stage):
     def __init__(self):
         super().__init__("白銀の森", "白銀の馬に乗った王子に出会える伝説がある")
 
+## story4
+class OldLibrary(Stage):
+    def __init__(self):
+        super().__init__("図書館遺跡", "太古の図書館のように見える遺跡")
+
 
 # define items
 ## story1
@@ -154,6 +157,10 @@ class TabooBook(Item):
     def __init__(self):
         super().__init__("禁忌の本", "倉庫に所蔵されていた読んではならない本")
 
+## story4
+class DancingBook(Item):
+    def __init__(self):
+        super().__init__("踊る人形の本", "遺跡に残されていた謎の本")
 
 # define daytimes
 ## story1
@@ -175,4 +182,9 @@ class TreasureDay(DayTime):
 class MeetDay(DayTime):
     def __init__(self):
         super().__init__("パンナと出会った日", mon=9, day=20, year=1017, note="勇者とパンナが出会った日。二年前")
+
+## story4
+class ResearchDay(DayTime):
+    def __init__(self):
+        super().__init__("調査日", mon=10, day=5, year=1018, note="去年の出来事")
 
