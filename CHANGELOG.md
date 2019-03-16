@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.3.0] - 2019-03-16
+### Added
+- Yunazo story 03
+### Changed
+- Submodule storybuilder (Story, Episode, Scene)
+
 ## [0.2.0] - 2019-03-14
 ### Added
 - This CHANGELOG file to hopefully serve as an evolving example of a standardized open source project CHANGELOG.
@@ -17,5 +23,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Submodule storybuilder (BasePerson, act_word)
 
-[Unreleased]: https://github.com/nagisc007/prj_kakuyomu/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/nagisc007/prj_kakuyomu/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/nagisc007/prj_kakuyomu/releases/v0.3.0
 [0.2.0]: https://github.com/nagisc007/prj_kakuyomu/releases/v0.2.0
