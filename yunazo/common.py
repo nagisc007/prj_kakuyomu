@@ -62,7 +62,7 @@ class DondahlChief(Person):
 
 class Brenda(Person):
     def __init__(self):
-        super().__init__("ブレンダ", 56, "female", "使用人", info="バダック付の使用人")
+        super().__init__("ブレンダ", 56, "female", "使用人", note="バダック付の使用人")
 
 ## story3
 class Manderine(Person):
@@ -169,10 +169,10 @@ class AfterDay(DayTime):
 ## story2
 class TreasureDay(DayTime):
     def __init__(self):
-        super().__init__("宝物日和", mon=5, day=5, year=1019, hour=10, info="バロックの命日の数日前")
+        super().__init__("宝物日和", mon=5, day=5, year=1019, hour=10, note="バロックの命日の数日前")
 
 ## story3
 class MeetDay(DayTime):
     def __init__(self):
-        super().__init__("パンナと出会った日", mon=9, day=20, year=1017, info="勇者とパンナが出会った日。二年前")
+        super().__init__("パンナと出会った日", mon=9, day=20, year=1017, note="勇者とパンナが出会った日。二年前")
 

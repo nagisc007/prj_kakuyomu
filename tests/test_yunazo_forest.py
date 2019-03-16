@@ -10,7 +10,7 @@ from storybuilder.builder.testtools import checked_has_basic_info
 
 from yunazo.common import Yusha, Panna, Manderine
 from yunazo.common import WaroneHouse, SilverForest
-from yunazo.common import RentalPony
+from yunazo.common import RentalPony, TabooBook
 from yunazo.common import MeetDay
 
 from yunazo.story3.story import story
@@ -43,7 +43,8 @@ class StoryTest(unittest.TestCase):
 
     def test_story_basic_info(self):
         self.assertTrue(checked_has_basic_info(
-            self, self.acts, Yusha(), Panna(), "渡航費", "捜索依頼"
+            self, self.acts, Yusha(), Panna(),
+            "渡航", "渡航費", "捜索依頼", "パーティ"
             ))
 
 
@@ -69,7 +70,8 @@ class EpisodeTest_intro(unittest.TestCase):
 
     def test_intro_basic_info(self):
         self.assertTrue(checked_has_basic_info(
-            self, self.acts, Yusha(), Manderine(), "渡航費", "捜索依頼"
+            self, self.acts, Yusha(), Manderine(),
+            "渡航費", "渡航費", "捜索依頼", "依頼"
             ))
 
 
@@ -87,7 +89,7 @@ class EpisodeTest_in_forest(unittest.TestCase):
     """
     def setUp(self):
         self.acts = ep_in_forest(
-                SilverForest(), MeetDay(), Yusha(), Panna(), RentalPony()
+                SilverForest(), MeetDay(), Yusha(), Panna(), RentalPony(), TabooBook()
                 )
 
     def test_intro_actions(self):
@@ -95,7 +97,8 @@ class EpisodeTest_in_forest(unittest.TestCase):
 
     def test_intro_basic_info(self):
         self.assertTrue(checked_has_basic_info(
-            self, self.acts, Yusha(), Panna(), "捜索依頼", "説得"
+            self, self.acts, Yusha(), Panna(),
+            "見つける", "王子", "説得", "帰らない"
             ))
 
 
@@ -113,7 +116,7 @@ class EpisodeTest_truth(unittest.TestCase):
     """
     def setUp(self):
         self.acts = ep_truth(
-                SilverForest(), MeetDay(), Yusha(), Panna(), RentalPony()
+                SilverForest(), MeetDay(), Yusha(), Panna(), RentalPony(), TabooBook()
                 )
 
     def test_intro_actions(self):
@@ -121,6 +124,7 @@ class EpisodeTest_truth(unittest.TestCase):
 
     def test_intro_basic_info(self):
         self.assertTrue(checked_has_basic_info(
-            self, self.acts, Yusha(), Panna(), "依頼", "謎を解く"
+            self, self.acts, Yusha(), Panna(),
+            "連れて", "依頼", "謎を解く", "パーティ"
             ))
 
