@@ -7,7 +7,9 @@ import unittest
 #import test_yunazo_clock
 #import test_yunazo_2nd
 #import test_yunazo_forest
-import test_yunazo_dance
+#import test_yunazo_dance
+import test_yunazo5
+
 
 def suite():
     '''Packing all tests.
@@ -36,15 +38,19 @@ def suite():
     #suite.addTest(unittest.makeSuite(test_yunazo_forest.EpisodeTest_truth))
 
     # story4
-    suite.addTest(unittest.makeSuite(test_yunazo_dance.StoryTest))
-    suite.addTest(unittest.makeSuite(test_yunazo_dance.EpisodeTest_intro))
-    suite.addTest(unittest.makeSuite(test_yunazo_dance.EpisodeTest_dancingmen))
-    suite.addTest(unittest.makeSuite(test_yunazo_dance.EpisodeTest_papertruth))
-    suite.addTest(unittest.makeSuite(test_yunazo_dance.SceneTest_dancinggirl))
-    suite.addTest(unittest.makeSuite(test_yunazo_dance.SceneTest_dancingmen))
-    suite.addTest(unittest.makeSuite(test_yunazo_dance.SceneTest_frontlib))
-    suite.addTest(unittest.makeSuite(test_yunazo_dance.SceneTest_in_lib))
-    suite.addTest(unittest.makeSuite(test_yunazo_dance.SceneTest_oldbooks))
-    suite.addTest(unittest.makeSuite(test_yunazo_dance.SceneTest_paperexpensive))
+    #suite.addTest(unittest.makeSuite(test_yunazo_dance.StoryTest))
+    #suite.addTest(unittest.makeSuite(test_yunazo_dance.EpisodeTest_intro))
+    #suite.addTest(unittest.makeSuite(test_yunazo_dance.EpisodeTest_dancingmen))
+    #suite.addTest(unittest.makeSuite(test_yunazo_dance.EpisodeTest_papertruth))
+    #suite.addTest(unittest.makeSuite(test_yunazo_dance.SceneTest_dancinggirl))
+    #suite.addTest(unittest.makeSuite(test_yunazo_dance.SceneTest_dancingmen))
+    #suite.addTest(unittest.makeSuite(test_yunazo_dance.SceneTest_frontlib))
+    #suite.addTest(unittest.makeSuite(test_yunazo_dance.SceneTest_in_lib))
+    #suite.addTest(unittest.makeSuite(test_yunazo_dance.SceneTest_oldbooks))
+    #suite.addTest(unittest.makeSuite(test_yunazo_dance.SceneTest_paperexpensive))
+
+    # story5
+    suite.addTest(unittest.makeSuite(test_yunazo5.StoryTest))
+    suite.addTest(unittest.makeSuite(test_yunazo5.EpisodeTest))
 
     return suite
