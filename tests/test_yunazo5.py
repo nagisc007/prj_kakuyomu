@@ -4,6 +4,7 @@
 import unittest
 
 from storybuilder.builder.acttypes import ActType, Behavior
+from storybuilder.builder.base import Master
 import storybuilder.builder.testtools as testtools
 
 from yunazo.story5.story import story
@@ -11,8 +12,10 @@ from yunazo.story5.story import intro
 from yunazo.story5.story import strange_oldman
 from yunazo.story5.story import real_criminal
 
-from yunazo.story5.story import Yusha, Panna, Crades, Claire
+from yunazo.story5.story import Yusha, Panna, Crades, Claire, PoliceChief
 from yunazo.story5.story import Donston
+from yunazo.story5.story import MagicBall
+from yunazo.story5.story import Today
 
 
 class StoryTest(unittest.TestCase):
@@ -52,33 +55,67 @@ class StoryTest(unittest.TestCase):
 class EpisodeTest(unittest.TestCase):
     """Test episodes.
     * outline of Intro
-        - Who:
-        - Whom:
-        - When:
-        - Where:
-        - What:
-        - Why:
-        - How:
-        - Result:
+        - Who: 勇者
+        - Whom: パンナ
+        - When: 六月の午後
+        - Where: 競馬で有名な町ドンストン
+        - What: 事件解決を依頼された
+        - Why: 突然店が消えたという謎に興味を持った
+        - How: 実際に訪れる
+        - Result: 容疑者クラデスに出会う
     * outline of Strange oldman
-        - Who:
-        - Whom:
-        - When:
-        - Where:
-        - What:
-        - Why:
-        - How:
-        - Result:
+        - Who: 勇者
+        - Whom: クラデス
+        - When: 継続
+        - Where: 継続
+        - What: 消失の謎を解く
+        - Why: クラデスが自分でやったと言っている
+        - How: 関係者に事情聴取をする
+        - Result: クラデスの魔法が元凶だった
     * outline of Real criminal
-        - Who:
-        - Whom:
-        - When:
-        - Where:
-        - What:
-        - Why:
-        - How:
-        - Result:
+        - Who: 勇者
+        - Whom: クラデス
+        - When: 継続
+        - Where: 消えた靴屋の前
+        - What: 事件の犯人を見つける
+        - Why: 真犯人の兇行を止めるため
+        - How: 真犯人の行為を暴く
+        - Result: クラデスがパーティに加わる
     """
     def setUp(self):
-        pass
+        self.ma = Master("test")
+        self.intro = intro(self.ma, Yusha(), Panna(), Crades(), Donston(), Today())
+        self.oldman = strange_oldman(self.ma, Yusha(), Panna(), Crades(), Claire(),
+                PoliceChief(), Donston(), MagicBall(), Today())
+        self.criminal = real_criminal(self.ma, Yusha(), Panna(), Crades(), Claire(),
+                Donston(), Today())
 
+    def test_intro_has_basic_infos(self):
+        self.assertTrue(testtools.has_basic_infos(self, self.intro, Yusha(), Panna()))
+
+    def test_intro_has_outline_infos(self):
+        self.assertTrue(testtools.has_outline_infos(self, self.intro,
+            Yusha(), Behavior.MUST, "事件解決",
+            Yusha(), Behavior.FEEL, "謎に興味",
+            Yusha(), Behavior.VISIT,Donston().name,
+            Yusha(), Behavior.MEET, Crades().name))
+
+    def test_oldman_basic_infos(self):
+        self.assertTrue(testtools.has_basic_infos(self, self.oldman, Yusha(), Crades()))
+
+    def test_oldman_outline_infos(self):
+        self.assertTrue(testtools.has_outline_infos(self, self.oldman,
+            Yusha(), Behavior.TELL, "謎を解く",
+            Crades(), Behavior.TALK, "自分でやった",
+            Yusha(), Behavior.HEAR, "関係者",
+            Crades(), Behavior.TALK, "自分の魔法が原因"))
+
+    def test_crimnal_basic_infos(self):
+        self.assertTrue(testtools.has_basic_infos(self, self.criminal, Yusha(), Crades()))
+
+    def test_criminal_outline_infos(self):
+        self.assertTrue(testtools.has_outline_infos(self, self.criminal,
+            Yusha(), Behavior.TELL, "犯人を見つける",
+            Yusha(), Behavior.EXPLAIN, "本当の殺人を起こさせない",
+            Yusha(), Behavior.TALK, "事件の真相",
+            Crades(), Behavior.TALK, "パーティに入る"))

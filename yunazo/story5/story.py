@@ -66,19 +66,50 @@ class ThirdDay(DayTime):
         super().__init__("第三の事件日", 6, 9, 1018)
 
 
-def intro(ma: Master):
+def intro(ma: Master,
+        yusha: Yusha, panna: Panna, crades: Crades,
+        town: Donston,
+        day: Today):
     return ma.story(
             ma.title("イントロ"),
+            day.explain("六月の湿気が多い午後"),
+            town.explain("競馬で有名な町"),
+            yusha.come(town.name),
+            panna.come(town.name),
+            crades.tell("何もしとらん"),
+            yusha.must("事件解決"),
+            yusha.feel("謎に興味がある"),
+            yusha.visit(town.name),
+            yusha.meet(crades.name),
             )
 
-def strange_oldman(ma: Master):
+def strange_oldman(ma: Master,
+        yusha: Yusha, panna: Panna, crades: Crades, claire: Claire, poli: PoliceChief,
+        town: Donston,
+        ball: MagicBall,
+        day: Today):
     return ma.story(
             ma.title("奇妙な老人"),
+            day.explain(""),
+            town.explain("広場だった"),
+            yusha.tell("謎を解く"),
+            crades.talk("自分でやった"),
+            yusha.hear("関係者から話を"),
+            crades.talk("自分の魔法が原因"),
             )
 
-def real_criminal(ma: Master):
+def real_criminal(ma: Master,
+        yusha: Yusha, panna: Panna, crades: Crades, claire: Claire,
+        town: Donston,
+        day: Today):
     return ma.story(
             ma.title("真犯人"),
+            day.explain("日は徐々に傾いていた"),
+            town.explain("綺麗に店は消えている"),
+            yusha.tell("犯人を見つける"),
+            yusha.explain("本当の殺人を起こさせない"),
+            yusha.talk("事件の真相"),
+            crades.talk("パーティに入る"),
             )
 
 def story():
@@ -94,17 +125,11 @@ def story():
 
     return ma.story(
             ma.title("勇者は冒険よりＡＢＣ商店消失の謎解きをしたい"),
-            intro(ma),
-            strange_oldman(ma),
-            real_criminal(ma),
-            day.explain("六月の湿気が多い午後"),
-            town.explain("競馬で有名な町"),
-            yusha.come(town.name),
-            panna.come(town.name),
-            town.explain("中央広場で騒ぎ"),
-            yusha.go("広場"),
-            poli.catch(crades.name),
-            crades.tell("何もしとらん"),
+            intro(ma, yusha, panna, crades, town, day),
+            strange_oldman(ma, yusha, panna, crades, claire, poli,
+                town, ball, day),
+            real_criminal(ma, yusha, panna, crades, claire, town, day),
+            #
             poli.explain("{}が事件の重要参考人".format(crades.name)),
             lepoir.talk("事件について"),
             claire.tell("突然店が消えたんです"),
