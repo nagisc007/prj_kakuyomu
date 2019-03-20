@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.5.0] - 2019-03-20
+### Added
+- Yunazo story 05
+### Changed
+- Submodule: storybuilder (ActionGroup)
+
 ## [0.4.0] - 2019-03-19
 ### Added
 - Yunazo story 04
@@ -27,7 +33,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Submodule storybuilder (BasePerson, act_word)
 
-[Unreleased]: https://github.com/nagisc007/prj_kakuyomu/compare/v0.4.0...HEAD
-[0.4.0]: https://github.com/nagisc007/prj_kakuyomu/releases/v0.3.0
+[Unreleased]: https://github.com/nagisc007/prj_kakuyomu/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/nagisc007/prj_kakuyomu/releases/v0.5.0
+[0.4.0]: https://github.com/nagisc007/prj_kakuyomu/releases/v0.4.0
 [0.3.0]: https://github.com/nagisc007/prj_kakuyomu/releases/v0.3.0
 [0.2.0]: https://github.com/nagisc007/prj_kakuyomu/releases/v0.2.0

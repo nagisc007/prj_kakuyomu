@@ -2,7 +2,7 @@
 
 | version | status | released | modified | genre | size | site | contest |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| v0.1.0 | Develop | 2019.3.- | 2019.3.19 | Fantasy, Mystery | 4K | [カクヨム](https://kakuyomu.jp/) | [カクヨム3周年記念選手権](https://kakuyomu.jp/info/entry/3rd_anniversary_kac5) |
+| v0.1.0 | Develop | 2019.3.20 | 2019.3.20 | Fantasy, Mystery | 4K | [カクヨム](https://kakuyomu.jp/works/1177354054888907031) | [カクヨム3周年記念選手権](https://kakuyomu.jp/info/entry/3rd_anniversary_kac5) |
 
 **「そもそもこれは順序に意味なんかないんですよ」**
 

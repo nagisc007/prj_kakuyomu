@@ -2,7 +2,7 @@
 
 | version | genre |
 | --- | --- |
-| v0.4.0 | Fantasy, Mystery |
+| v0.5.0 | Fantasy, Mystery |
 
 **「冒険など、私がしなくても誰かがするでしょう」**
 
@@ -14,7 +14,7 @@
 | [#2](story2/README.md) | 勇者は冒険より天才発明家バダックの洞窟の謎解きをしたい | [カクヨム](https://kakuyomu.jp/works/1177354054888805759) |
 | [#3](story3/README.md) | 勇者は冒険より白馬王子の森の謎解きをしたい | [カクヨム](https://kakuyomu.jp/works/1177354054888833245) |
 | [#4](story4/README.md) | 勇者は冒険より紙とペンと踊る人形の謎解きをしたい | [カクヨム](https://kakuyomu.jp/works/1177354054888861994) |
-| [#5](story5/README.md) | 勇者は冒険よりABCD商店消失の謎解きをしたい | [カクヨム](http://kakuyomu.jp/) |
+| [#5](story5/README.md) | 勇者は冒険よりABCD商店消失の謎解きをしたい | [カクヨム](https://kakuyomu.jp/works/1177354054888907031) |
 
 ## Description
 
