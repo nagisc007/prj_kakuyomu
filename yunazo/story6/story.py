@@ -17,6 +17,10 @@ from common import Yusha, Panna, Crades, Emile
 
 
 # characters
+class Conny(Person):
+    def __init__(self):
+        super().__init__("コニー", 54, "male", "大会委員")
+
 
 # stages
 class NachansTown(Stage):
@@ -30,6 +34,13 @@ class HotDok(Item):
         super().__init__("ホットドク", "厚切りパンで辛く味付けしたハムを挟んだもの")
 
 # words
+class Competition(Word):
+    def __init__(self):
+        super().__init__("早食い大会", "ホットドクの早食い大会")
+
+    def prize(self):
+        return "賞金10ガル"
+
 
 # daytimes
 class BeforeDay(DayTime):
@@ -63,19 +74,36 @@ def story():
     '''
     ma = Master("Yunazo6")
     yusha, panna, crades, emile = Yusha(), Panna(), Crades(), Emile()
+    conny = Conny()
     town = NachansTown()
     hotdok = HotDok()
     day0, day1 = BeforeDay(), CompeDay()
 
     return ma.story(
             ma.title("勇者は冒険より大食い仮面騎士の謎解きをしたい"),
+            # ep1
             ep_intro(ma),
             day0.explain("大会前夜"),
             town.explain("{}で有名な町".format(hotdok.name)),
-            yusha.be(),
-            emile.be(),
+            yusha.accept("大会調査依頼を{}から".format(conny.name)),
+            yusha.hear("大会での不正疑惑"),
+            yusha.let("{}を大会参加".format(panna.name)),
+            panna.tell("いっぱい食べられるん？"),
+            emile.explain("十戦無敗の仮面騎士"),
+            yusha.visit(town.name),
+            panna.visit(town.name),
+            crades.visit(town.name),
+            # ep2
             ep_competition(ma),
+            day1.explain("大会当日"),
+            emile.join("大会"),
+            panna.join("大会"),
+            crades.find("仮面騎士の呪い"),
+            # ep3
             ep_realflavor(ma),
+            crades.teach("呪いを解く方法"),
+            yusha.confess("{}の素顔が美しい".format(emile.name)),
+            emile.eat("本物の{}".format(hotdok.name)),
             )
 
 def main():

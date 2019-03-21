@@ -10,7 +10,8 @@ import storybuilder.builder.testtools as testtools
 
 from yunazo.story6.story import story
 from yunazo.story6.story import ep_intro, ep_competition, ep_realflavor
-from yunazo.story6.story import Yusha, Emile
+from yunazo.story6.story import Yusha, Panna, Emile
+from yunazo.story6.story import HotDok
 
 
 class StoryTest(unittest.TestCase):
@@ -31,6 +32,10 @@ class StoryTest(unittest.TestCase):
             Yusha(), Emile()))
 
     def test_has_outline_infos(self):
-        #self.assertTrue(testtools.has_outline_infos())
-        pass
+        self.assertTrue(testtools.has_outline_infos(self, self.story,
+            Yusha().accept("大会調査依頼"), # what
+            Yusha().hear("不正疑惑"), # why
+            Yusha().let("{}を大会参加".format(Panna().name)), # how
+            Emile().eat("本物の{}".format(HotDok().name)), # result
+            ))
 
