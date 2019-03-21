@@ -3,7 +3,8 @@
 """
 import unittest
 
-from storybuilder.builder.acttypes import ActType, Behavior
+from storybuilder.builder.acttypes import ActType
+from storybuilder.builder.behavior import Behavior
 from storybuilder.builder.base import Master
 import storybuilder.builder.testtools as testtools
 
@@ -45,11 +46,11 @@ class StoryTest(unittest.TestCase):
 
     def test_has_outline_infos(self):
         self.assertTrue(testtools.has_outline_infos(self, self.story,
-            Yusha(), Behavior.DISPEL, "容疑",
-            Yusha(), Behavior.BELIEVE, "やっていない",
-            Yusha(), Behavior.TELL, "真犯人を見つける",
-            Claire(), Behavior.CONFESS, "継ぎたくない")
-            )
+            Yusha().dispel("容疑"),
+            Yusha().believe("やっていない"),
+            Yusha().tell("真犯人を見つける"),
+            Claire().confess("継ぎたくない")
+            ))
 
 
 class EpisodeTest(unittest.TestCase):
@@ -95,27 +96,28 @@ class EpisodeTest(unittest.TestCase):
 
     def test_intro_has_outline_infos(self):
         self.assertTrue(testtools.has_outline_infos(self, self.intro,
-            Yusha(), Behavior.MUST, "事件解決",
-            Yusha(), Behavior.FEEL, "謎に興味",
-            Yusha(), Behavior.VISIT,Donston().name,
-            Yusha(), Behavior.MEET, Crades().name))
+            Yusha().must("事件解決"),
+            Yusha().feel("謎に興味"),
+            Yusha().visit(Donston().name),
+            Yusha().meet(Crades().name)))
 
     def test_oldman_basic_infos(self):
         self.assertTrue(testtools.has_basic_infos(self, self.oldman, Yusha(), Crades()))
 
     def test_oldman_outline_infos(self):
         self.assertTrue(testtools.has_outline_infos(self, self.oldman,
-            Yusha(), Behavior.TELL, "謎を解く",
-            Crades(), Behavior.TALK, "自分でやった",
-            Yusha(), Behavior.HEAR, "関係者",
-            Crades(), Behavior.TALK, "自分の魔法が原因"))
+            Yusha().tell("謎を解く"),
+            Crades().talk("自分でやった"),
+            Yusha().hear("関係者"),
+            Crades().talk("自分の魔法が原因")))
 
     def test_crimnal_basic_infos(self):
         self.assertTrue(testtools.has_basic_infos(self, self.criminal, Yusha(), Crades()))
 
     def test_criminal_outline_infos(self):
         self.assertTrue(testtools.has_outline_infos(self, self.criminal,
-            Yusha(), Behavior.TELL, "犯人を見つける",
-            Yusha(), Behavior.EXPLAIN, "本当の殺人を起こさせない",
-            Yusha(), Behavior.TALK, "事件の真相",
-            Crades(), Behavior.TALK, "パーティに入る"))
+            Yusha().tell("犯人を見つける"),
+            Yusha().explain("本当の殺人を起こさせない"),
+            Yusha().talk("事件の真相"),
+            Crades().talk("パーティに入る")))
+

@@ -8,7 +8,7 @@ sys.path.append('storybuilder')
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append('common')
 
-from storybuilder.builder.acttypes import Behavior
+from storybuilder.builder.behavior import Behavior
 from storybuilder.builder.base import Stage, Item, DayTime, Word, Master
 from storybuilder.builder.person import Person
 from storybuilder.builder.tools import build_to_story
