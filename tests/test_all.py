@@ -56,5 +56,6 @@ def suite():
 
     # story6
     suite.addTest(unittest.makeSuite(test_yunazo6.StoryTest))
+    suite.addTest(unittest.makeSuite(test_yunazo6.EpisodeTest))
 
     return suite
