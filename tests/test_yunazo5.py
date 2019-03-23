@@ -33,7 +33,7 @@ class StoryTest(unittest.TestCase):
     """
     @classmethod
     def setUpClass(cls):
-        print("**** story of yunazo5 ****")
+        print("\n**** story of yunazo5 ****")
 
     def setUp(self):
         self.story = story()

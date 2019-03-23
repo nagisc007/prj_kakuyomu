@@ -21,7 +21,7 @@ class StoryTest(unittest.TestCase):
     """
     @classmethod
     def setUpClass(cls):
-        print("**** story of yunazo 06 ****")
+        print("\n**** story of yunazo 06 ****")
 
     def setUp(self):
         self.story = story()
