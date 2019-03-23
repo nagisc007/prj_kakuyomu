@@ -2,7 +2,7 @@
 
 | version | status | released | modified | genre | size | site | contest |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| v0.1.0 | Develop | 2019.3.- | 2019.3.21 | Fantasy, Mystery | 4K | [カクヨム](https://kakuyomu.jp/) | [カクヨム3周年記念選手権](https://kakuyomu.jp/info/entry/3rd_anniversary_kac6) |
+| v0.1.0 | Develop | 2019.3.22 | 2019.3.23 | Fantasy, Mystery | 4K | [カクヨム](https://kakuyomu.jp/works/1177354054888935713) | [カクヨム3周年記念選手権](https://kakuyomu.jp/info/entry/3rd_anniversary_kac6) |
 
 **「彼女は最初から食べてなどいなかったんだ」**
 
@@ -23,7 +23,7 @@
 
 ## Stages
 
-- ネーチャーン……ホットドク大会で有名な町。
+- ネーチャンス……ホットドク大会で有名な町。
 
 ## License
 
