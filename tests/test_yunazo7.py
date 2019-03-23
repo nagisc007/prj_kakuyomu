@@ -11,6 +11,7 @@ import storybuilder.builder.testtools as testtools
 from yunazo.story7.story import story
 from yunazo.story7.story import ep_intro, ep_in_dream, ep_out_dream
 from yunazo.story7.story import Yusha, Panna, Crades, Emile
+from yunazo.story7.story import noardo
 
 
 class StoryTest(unittest.TestCase):
@@ -26,10 +27,17 @@ class StoryTest(unittest.TestCase):
         self.assertTrue(testtools.is_all_actions(self, self.story))
 
     def test_has_basic_infos(self):
-        pass
+        self.assertTrue(testtools.has_basic_infos(self, self.story,
+            Yusha(), Emile()))
 
     def test_has_outline_infos(self):
-        pass
+        vila = noardo()
+        self.assertTrue(testtools.has_outline_infos(self, self.story,
+            Yusha().search("",obj=vila),
+            Yusha().know("",obj=vila),
+            Yusha().visit("",obj=vila),
+            Yusha().wake(),
+            ))
 
     def test_followed_all_flags(self):
         self.assertTrue(testtools.followed_all_flags(self, self.story))
