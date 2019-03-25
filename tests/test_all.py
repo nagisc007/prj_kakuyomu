@@ -8,9 +8,9 @@ import unittest
 #import test_yunazo_2nd
 #import test_yunazo_forest
 #import test_yunazo_dance
-import test_yunazo5
-import test_yunazo6
-import test_yunazo7
+#import test_yunazo5
+#import test_yunazo6
+#import test_yunazo7
 
 
 def suite():
@@ -52,15 +52,15 @@ def suite():
     #suite.addTest(unittest.makeSuite(test_yunazo_dance.SceneTest_paperexpensive))
 
     # story5
-    suite.addTest(unittest.makeSuite(test_yunazo5.StoryTest))
-    suite.addTest(unittest.makeSuite(test_yunazo5.EpisodeTest))
+    #suite.addTest(unittest.makeSuite(test_yunazo5.StoryTest))
+    #suite.addTest(unittest.makeSuite(test_yunazo5.EpisodeTest))
 
     # story6
-    suite.addTest(unittest.makeSuite(test_yunazo6.StoryTest))
-    suite.addTest(unittest.makeSuite(test_yunazo6.EpisodeTest))
+    #suite.addTest(unittest.makeSuite(test_yunazo6.StoryTest))
+    #suite.addTest(unittest.makeSuite(test_yunazo6.EpisodeTest))
 
     # story7
-    suite.addTest(unittest.makeSuite(test_yunazo7.StoryTest))
-    suite.addTest(unittest.makeSuite(test_yunazo7.EpisodeTest))
+    #suite.addTest(unittest.makeSuite(test_yunazo7.StoryTest))
+    #suite.addTest(unittest.makeSuite(test_yunazo7.EpisodeTest))
 
     return suite
