@@ -2,7 +2,7 @@
 
 | version | genre |
 | --- | --- |
-| v0.6.0 | Fantasy, Mystery |
+| v0.7.0 | Fantasy, Mystery |
 
 **「冒険など、私がしなくても誰かがするでしょう」**
 
@@ -16,7 +16,7 @@
 | [#4](story4/README.md) | 勇者は冒険より紙とペンと踊る人形の謎解きをしたい | [カクヨム](https://kakuyomu.jp/works/1177354054888861994) |
 | [#5](story5/README.md) | 勇者は冒険よりABCD商店消失の謎解きをしたい | [カクヨム](https://kakuyomu.jp/works/1177354054888907031) |
 | [#6](story6/README.md) | 勇者は冒険より大食い仮面騎士の謎解きをしたい | [カクヨム](https://kakuyomu.jp/works/1177354054888935713) |
-| [#7](story7/README.md) | 勇者は冒険より夢中病の謎解きをしたい | [カクヨム](https://kakuyomu.jp/) |
+| [#7](story7/README.md) | 勇者は冒険より夢中病の謎解きをしたい | [カクヨム](https://kakuyomu.jp/works/1177354054888964046) |
 
 ## Description
 
