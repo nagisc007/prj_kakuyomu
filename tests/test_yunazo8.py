@@ -9,9 +9,9 @@ import storybuilder.builder.testtools as testtools
 from yunazo.story8.story import story
 from yunazo.story8.story import ep_intro, ep_maou, ep_festa
 from yunazo.story8.story import Yusha, Panna, Crades, Emile
-from yunazo.story8.story import boy_ordy, mam_ordy, dad_ordy, vila_people
+from yunazo.story8.story import boy_ordy, mam_ordy, dad_ordy, vila_people, vila_child, vila_sailor
 from yunazo.story8.story import zibonga_vila, ordy_home
-from yunazo.story8.story import devils_fes, real_tale
+from yunazo.story8.story import devils_fes, real_tale, broken_sword, yusha_mark
 from yunazo.story8.story import past_day, before_day, fes_day
 
 class StoryTest(unittest.TestCase):
@@ -46,13 +46,16 @@ class EpisodesTest(unittest.TestCase):
     def setUp(self):
         ma = Master('test yunazo8')
         self.ep1 = ep_intro(ma, Yusha(), Panna(), Crades(), Emile(), boy_ordy(),
+                vila_child(), vila_sailor(),
                 devils_fes(), zibonga_vila(), before_day())
         self.ep2 = ep_maou(ma, Yusha(), Panna(), Crades(), Emile(), boy_ordy(),
-                mam_ordy(), dad_ordy(),
-                devils_fes(), zibonga_vila(), ordy_home(), before_day(), past_day())
+                mam_ordy(), dad_ordy(), vila_sailor(),
+                devils_fes(), real_tale(), broken_sword(), yusha_mark(),
+                zibonga_vila(), ordy_home(), before_day(), past_day())
         self.ep3 = ep_festa(ma, Yusha(), Panna(), Crades(), Emile(), boy_ordy(),
-                vila_people(),
-                devils_fes(), real_tale(), zibonga_vila(), fes_day())
+                vila_people(), mam_ordy(),
+                devils_fes(), real_tale(), broken_sword(), yusha_mark(),
+                zibonga_vila(), fes_day(), past_day())
 
     def test_episodes_has_basic_infos(self):
         data_set = [
