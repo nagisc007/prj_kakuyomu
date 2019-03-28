@@ -31,6 +31,19 @@ class Emile(Person):
     def __init__(self):
         super().__init__("エミール", 20, "female", "魔法剣士", "私", "謎多き仮面の女性")
 
+def p_yusha():
+    return Person("勇者", 18, "male", "勇者", "僕", "謎解き好きな勇者")
+
+def p_panna():
+    return Person("パンナ", 16, "female", "武闘家", "ウチ", "脳天気な食いしん坊少女。勇者のことが好き")
+
+def p_crades():
+    return Person("クラデス", 76, "male", "僧侶", "儂", "自称大神官候補。ただの助平爺")
+
+def p_emile():
+    return Person("エミール", 20, "female", "魔法剣士", "私", "謎多き仮面の女性")
+
+
 ## story1
 class InnOwner(Person):
     def __init__(self):
