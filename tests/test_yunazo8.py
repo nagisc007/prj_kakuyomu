@@ -32,9 +32,9 @@ class StoryTest(unittest.TestCase):
     def test_has_outline_infos(self):
         self.assertTrue(testtools.has_outline_infos(self, self.story,
             Yusha().hear(devils_fes()),
-            Yusha().want(devils_fes(), "知る"),
+            Yusha().want(devils_fes(), info="知る"),
             Yusha().investigate(zibonga_vila()),
-            Yusha().know(zibonga_vila(), "魔王が救った"),
+            Yusha().know(zibonga_vila(), info="魔王が救った"),
             ))
 
     def test_followed_all_flags(self):
@@ -76,9 +76,9 @@ class EpisodesTest(unittest.TestCase):
                     Yusha().meet(boy_ordy()),
                     ),
                 ("ep2", self.ep2,
-                    Yusha().hear(boy_ordy(), "祭り"),
+                    Yusha().hear(boy_ordy(), info="祭り"),
                     boy_ordy().know(devils_fes()),
-                    Yusha().teach(boy_ordy(), "勇者"),
+                    Yusha().teach(boy_ordy(),info= "勇者"),
                     boy_ordy().teach(past_day()),
                     ),
                 ("ep3", self.ep3,
