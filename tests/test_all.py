@@ -12,6 +12,7 @@ import unittest
 #import test_yunazo6
 #import test_yunazo7
 import test_yunazo8
+import test_yunazo9
 
 
 def suite():
@@ -67,5 +68,8 @@ def suite():
     # story 8
     suite.addTest(unittest.makeSuite(test_yunazo8.StoryTest))
     suite.addTest(unittest.makeSuite(test_yunazo8.EpisodesTest))
+
+    # story 9
+    suite.addTest(unittest.makeSuite(test_yunazo9.StoryTest))
 
     return suite

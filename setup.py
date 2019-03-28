@@ -7,7 +7,7 @@ sys.path.append('./tests')
 
 setup(
         name = 'Project Kakuyomu novel',
-        version = '0.1',
+        version = '0.8',
         description = "This is novels that upload to the Kakuyomu",
         packages = find_packages(),
         test_suite = 'test_all.suite'
