@@ -2,7 +2,7 @@
 
 | version | status | released | modified | genre | size | site | contest |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| v0.1.0 | Develop | 2019.3.- | 2019.3.28 | Fantasy, Mystery | 4K | [カクヨム](https://kakuyomu.jp/) | [カクヨム3周年記念選手権](https://kakuyomu.jp/info/entry/3rd_anniversary_kac9) |
+| v0.1.0 | Develop | 2019.3.29 | 2019.3.29 | Fantasy, Mystery | 4K | [カクヨム](https://kakuyomu.jp/works/1177354054889036769) | [カクヨム3周年記念選手権](https://kakuyomu.jp/info/entry/3rd_anniversary_kac9) |
 
 **「もともと勇者とは忌み嫌われる者の蔑称だったんだ」**
 

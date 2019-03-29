@@ -2,7 +2,7 @@
 
 | version | genre |
 | --- | --- |
-| v0.8.0 | Fantasy, Mystery |
+| v0.9.0 | Fantasy, Mystery |
 
 **「冒険など、私がしなくても誰かがするでしょう」**
 
@@ -18,7 +18,7 @@
 | [#6](story6/README.md) | 勇者は冒険より大食い仮面騎士の謎解きをしたい | [カクヨム](https://kakuyomu.jp/works/1177354054888935713) |
 | [#7](story7/README.md) | 勇者は冒険より夢中病の謎解きをしたい | [カクヨム](https://kakuyomu.jp/works/1177354054888964046) |
 | [#8](story8/README.md) | 勇者は冒険より三周年魔王祭の謎解きをしたい | [カクヨム](https://kakuyomu.jp/works/1177354054889006189) |
-| [#9](story9/README.md) | 勇者は冒険より勇者誕生の謎解きをしたい | [カクヨム](https://kakuyomu.jp/) |
+| [#9](story9/README.md) | 勇者は冒険より勇者誕生の謎解きをしたい | [カクヨム](https://kakuyomu.jp/works/1177354054889036769) |
 
 ## Description
 
