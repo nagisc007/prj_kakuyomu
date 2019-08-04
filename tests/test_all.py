@@ -13,6 +13,7 @@ import unittest
 #import test_yunazo7
 #import test_yunazo8
 #import test_yunazo9
+import test_loli
 
 
 def suite():
@@ -23,6 +24,10 @@ def suite():
     '''
     suite = unittest.TestSuite()
 
+    suite.addTests((
+        # sneaker contests
+        unittest.makeSuite(test_loli.StoryTest),
+        ))
     # story1
     #suite.addTest(unittest.makeSuite(test_yunazo_clock.StoryTest))
     #suite.addTest(unittest.makeSuite(test_yunazo_clock.EpisodeTest_intro))
