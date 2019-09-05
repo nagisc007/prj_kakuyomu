@@ -6,6 +6,7 @@
 
 | Number | Title | Contest |
 | --- | --- | --- |
+| [#kk01](brokenhear/README.md) | 正しい失恋の迎え方 | [大人も子供も参加できる！　 カクヨム甲子園《テーマ別》](https://kakuyomu.jp/contests/kakuyomukoshien2019_theme/detail) |
 | [#sn01](loli/README.md) | in preparation | [スニーカー文庫《シチュエーション斬り！！》コンテスト](https://kakuyomu.jp/contests/sneaker_situation/detail) |
 
 ## Description

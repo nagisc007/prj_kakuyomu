@@ -14,6 +14,7 @@ import unittest
 #import test_yunazo8
 #import test_yunazo9
 import test_loli
+import test_brokenheart
 
 
 def suite():
@@ -25,6 +26,8 @@ def suite():
     suite = unittest.TestSuite()
 
     suite.addTests((
+        # koushien
+        unittest.makeSuite(test_brokenheart.StoryTest),
         # sneaker contests
         unittest.makeSuite(test_loli.StoryTest),
         ))

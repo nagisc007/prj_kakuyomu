@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Project: Double loli
+- Project: Kakuyomu koushien (broken heart
 
 ## [0.10.0] - 2019-08-02
 ### Changed
